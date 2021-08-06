@@ -26,6 +26,7 @@ class MGCheckStrongPassword: UIViewController, UIApplicationDelegate {
     var flagDigit: Bool = false
     var flagSpec: Bool = false
     var progressLevel: Float = 0.0
+    var setInformation: String = ""
     
     func capTest(getString: String) -> Bool {
         let capTest = NSPredicate(format:"SELF MATCHES %@", ".*[A-Z]+.*")
