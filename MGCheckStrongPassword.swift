@@ -1,7 +1,11 @@
 //
 //  MGCheckStrongPassword.swift
 //  Mon Chemin de Vie
-//
+
+//  MAGRAF Studio
+//  https://magraf.fr
+//  contact@magraf.fr
+
 //  Created by raphael maguet on 06/08/2021.
 //
 
