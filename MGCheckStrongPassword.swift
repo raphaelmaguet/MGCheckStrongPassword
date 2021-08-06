@@ -84,7 +84,27 @@ class MGCheckStrongPassword: UIViewController, UIApplicationDelegate {
         return progressLevel
     }
     
-    func MGSetStrongPwd(getCount: Int, getTextField: UITextField, getProgress: UIProgressView) {
+    func setupInfo(setCount: Int) -> String {
+        
+        if !flagCount {
+            setInformation += "Must be greater than \(setCount)\n"
+        }
+        if !flagCap {
+            setInformation += "Must contain at least one capital letter\n"
+        }
+        if !flagLow {
+            setInformation += "Must contain at least one lowercase letter\n"
+        }
+        if !flagDigit {
+            setInformation += "Must contain at least one number\n"
+        }
+        if !flagSpec {
+            setInformation += "Must contain at least one special feature\n"
+        }
+        return setInformation
+    }
+    
+    func MGSetStrongPwd(getCount: Int, getTextField: UITextField, getProgress: UIProgressView, setInfo: UILabel) {
         let getStringText = getTextField.text
         if getStringText != "" {
             if countTest(getString: getStringText!, getCount: getCount) {
@@ -166,6 +186,8 @@ class MGCheckStrongPassword: UIViewController, UIApplicationDelegate {
                     getProgress.setProgress(progressLevel, animated: true)
                 }
             }
+            
+            setInfo.text = setupInfo(setCount: getCount)
             
         } else {
             flagCount = false
